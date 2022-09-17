@@ -12,6 +12,8 @@ public class Release {
     
     private String releaseType;
     
+    private String releaseName;
+    
     private Object[] tracks;
     
     private String spLink;
@@ -48,6 +50,14 @@ public class Release {
 
     public void setReleaseType(String releaseType) {
         this.releaseType = releaseType;
+    }
+    
+    public String getReleaseName() {
+        return releaseName;
+    }
+
+    public void setReleaseName(String releaseName) {
+        this.releaseName = releaseName;
     }
 
     public Object[] getTracks() {
