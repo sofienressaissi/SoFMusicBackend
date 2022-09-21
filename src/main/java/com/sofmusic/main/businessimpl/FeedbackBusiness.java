@@ -14,6 +14,8 @@ public class FeedbackBusiness implements IFeedbackBusiness {
     
     @Override
     public Feedback sendFeedback(Feedback feedback) {
+        feedback.setReacted(Boolean.FALSE);
+        feedback.setUnread(Boolean.FALSE);
         feedbackRepo.save(feedback);
         return feedback;
     }

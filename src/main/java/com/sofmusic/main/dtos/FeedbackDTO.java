@@ -10,6 +10,10 @@ public class FeedbackDTO {
     
     private String content;
     
+    private Boolean reacted;
+    
+    private Boolean unread;
+    
     public FeedbackDTO() {
         super();
     }
@@ -44,6 +48,22 @@ public class FeedbackDTO {
 
     public void setContent(String content) {
         this.content = content;
+    }
+    
+    public Boolean getReacted() {
+        return reacted;
+    }
+
+    public void setReacted(Boolean reacted) {
+        this.reacted = reacted;
+    }
+    
+    public Boolean getUnread() {
+        return unread;
+    }
+
+    public void setUnread(Boolean unread) {
+        this.unread = unread;
     }
     
 }

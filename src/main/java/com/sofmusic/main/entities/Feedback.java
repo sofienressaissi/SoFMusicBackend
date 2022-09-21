@@ -15,6 +15,10 @@ public class Feedback {
     
     private String content;
     
+    private Boolean reacted;
+    
+    private Boolean unread;
+    
     public Feedback() {
         super();
     }
@@ -50,7 +54,21 @@ public class Feedback {
     public void setContent(String content) {
         this.content = content;
     }
-    
-    
+
+    public Boolean getReacted() {
+        return reacted;
+    }
+
+    public void setReacted(Boolean reacted) {
+        this.reacted = reacted;
+    }
+
+    public Boolean getUnread() {
+        return unread;
+    }
+
+    public void setUnread(Boolean unread) {
+        this.unread = unread;
+    }
     
 }
