@@ -15,6 +15,12 @@ public class ReleaseBusiness implements IReleaseBusiness {
     private ReleaseRepository releaseRepo;
     
     @Override
+    public Release addNewRelease(Release release) {
+        releaseRepo.save(release);
+        return release;
+    }
+    
+    @Override
     public List<Release> getAllReleases() {
         List<Release> releases = releaseRepo.findAll();
 		if (!releases.isEmpty()) {

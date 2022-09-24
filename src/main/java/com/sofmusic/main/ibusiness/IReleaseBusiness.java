@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface IReleaseBusiness {
     
+    public Release addNewRelease(Release release);
     public List<Release> getAllReleases();
     
 }
