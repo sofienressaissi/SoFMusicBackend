@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.sofmusic.main.entities.Message;
+import java.util.List;
 import org.modelmapper.ModelMapper;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/")
 @CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
 public class MessageController {
 
@@ -21,8 +23,13 @@ public class MessageController {
 
     @Autowired
     private ModelMapper modelMapper;
+    
+    @GetMapping("/admin/allMsgs")
+    public List<Message> getAllMessages() {
+        return msgBusiness.getAllMessages();
+    }
 
-    @PostMapping("/send-message")
+    @PostMapping("/user/send-message")
     public Message sendMessage(@RequestBody MessageDTO msgDTO) {
         Message message = convertToEntity(msgDTO);
         return msgBusiness.sendMessage(message);
