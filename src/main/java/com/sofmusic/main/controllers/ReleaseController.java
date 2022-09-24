@@ -10,20 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/release")
 @CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
 public class ReleaseController {
     
     @Autowired
     private ReleaseBusiness releaseBusiness;
     
-    @GetMapping("/release/allReleases")
+    @GetMapping("/allReleases")
     public List<Release> getAllReleases() {
-        return releaseBusiness.getAllReleases();
-    }
-    
-    @GetMapping("/admin/allReleases")
-    public List<Release> getAllReleasesAdmin() {
         return releaseBusiness.getAllReleases();
     }
     

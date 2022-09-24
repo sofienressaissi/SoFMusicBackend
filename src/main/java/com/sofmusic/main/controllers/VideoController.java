@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/video")
 @CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
 public class VideoController {
     
     @Autowired
     private VideoBusiness videoBusiness;
     
-    @GetMapping("/video/allVideos")
+    @GetMapping("/allVideos")
     public List<Video> getAllVideos() {
         return videoBusiness.getAllVideos();
     }

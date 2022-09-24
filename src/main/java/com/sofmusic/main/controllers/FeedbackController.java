@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 @CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
 public class FeedbackController {
     
@@ -25,17 +25,17 @@ public class FeedbackController {
     @Autowired
     private ModelMapper modelMapper;
     
-    @GetMapping("/admin/allFeedbacks")
+    @GetMapping("/allFeedbacks")
     public List<Feedback> getAllFeedbacks() {
         return feedbackBusiness.getAllFeedbacks();
     }
     
-    @PutMapping("/admin/update-unread")
+    @PutMapping("/update-unread")
     public List<Feedback> updateUnread() {
         return feedbackBusiness.updateUnread();
     }
 
-    @PostMapping("/user/send-feedback")
+    @PostMapping("/send-feedback")
     public Feedback sendFeedback(@RequestBody FeedbackDTO feedbackDTO) {
         Feedback feedback = convertToEntity(feedbackDTO);
         return feedbackBusiness.sendFeedback(feedback);

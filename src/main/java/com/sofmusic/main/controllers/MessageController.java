@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 @CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
 public class MessageController {
 
@@ -24,12 +24,12 @@ public class MessageController {
     @Autowired
     private ModelMapper modelMapper;
     
-    @GetMapping("/admin/allMsgs")
+    @GetMapping("/allMsgs")
     public List<Message> getAllMessages() {
         return msgBusiness.getAllMessages();
     }
 
-    @PostMapping("/user/send-message")
+    @PostMapping("/send-message")
     public Message sendMessage(@RequestBody MessageDTO msgDTO) {
         Message message = convertToEntity(msgDTO);
         return msgBusiness.sendMessage(message);
