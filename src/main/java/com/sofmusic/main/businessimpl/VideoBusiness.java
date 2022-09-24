@@ -15,6 +15,12 @@ public class VideoBusiness implements IVideoBusiness {
     private VideoRepository videoRepo;
     
     @Override
+    public Video addNewVideo(Video video) {
+        videoRepo.save(video);
+        return video;
+    }
+    
+    @Override
     public List<Video> getAllVideos() {
         List<Video> videos = videoRepo.findAll();
 		if (!videos.isEmpty()) {

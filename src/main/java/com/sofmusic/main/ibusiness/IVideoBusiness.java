@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface IVideoBusiness {
     
+    public Video addNewVideo(Video video);
     public List<Video> getAllVideos();
     
 }
