@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000"})
+@CrossOrigin(origins = {"https://sof-music.herokuapp.com", "http://localhost:3000", 
+    "https://sof-music-admin.netlify.app/"})
 public class MessageController {
 
     @Autowired
